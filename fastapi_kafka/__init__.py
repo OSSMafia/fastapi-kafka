@@ -1,6 +1,6 @@
 """FastAPI framework with async Kafka integration"""
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 from aiokafka.helpers import create_ssl_context as create_ssl_context
 
