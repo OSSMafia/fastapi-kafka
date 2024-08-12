@@ -1,11 +1,11 @@
 [project]
 name = "fastapi_kafka"
-dynamic = ["version"]
+version = "0.1.0"
 description = "A wrapper around FastAPI to easily consume kafka messages as routes"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-    { name = "Matt Nick", email = "me@mattnick.xyz" },
+    { name = "OSS Mafia", email = "dev@oss-mafia.com" },
 ]
 dependencies = [
     "fastapi>=0.95.0",
