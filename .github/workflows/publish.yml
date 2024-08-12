@@ -27,7 +27,7 @@ jobs:
         env:
           VERSION_PART: patch
         run: |
-          python -m bump2version $VERSION_PART
+          bump2version $VERSION_PART
           git push --follow-tags
 
       - name: Build the package
