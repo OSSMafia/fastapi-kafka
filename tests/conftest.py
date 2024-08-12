@@ -2,9 +2,8 @@ from unittest.mock import AsyncMock
 from unittest.mock import patch
 
 from fastapi.testclient import TestClient
-import pytest
-
 from main import app as main_app
+import pytest
 
 
 @pytest.fixture

@@ -1,8 +1,7 @@
 from unittest.mock import AsyncMock
 
-import pytest
-
 from main import SomeMessage
+import pytest
 
 
 def test_read_root(app_client):
