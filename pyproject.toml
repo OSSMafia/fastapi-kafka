@@ -12,6 +12,10 @@ dependencies = [
     "aiokafka>=0.8.0",
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/OSSMafia/fastapi-kafka"
+"Source" = "https://github.com/OSSMafia/fastapi-kafka"
+
 [tools.setuptools.packages.find]
 where = "fastapi_kafka/"
 include = ["fastapi_kafka"]
