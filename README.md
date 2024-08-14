@@ -1,10 +1,12 @@
 # FastAPI Kafka
 
-This package is a wrapper around the amazing [FastAPI](https://pypi.org/project/fastapi/) package for introducing Kafka consumers as routes. No core FastAPI functionality has been altered and the documentation can be found [here](https://fastapi.tiangolo.com/).
+This package is a wrapper around the well-known [FastAPI](https://pypi.org/project/fastapi/) framework for introducing Kafka consumers as routes. No core FastAPI functionality has been altered and the documentation can be found [here](https://fastapi.tiangolo.com/).
 
-I drew inspiration for this package from working on a NestJS API using [KafkaJS](https://docs.nestjs.com/microservices/kafka) where kafka consumer topics are defined as controllers. It's an awesome pattern and super convienent to work with.
+Inspiration for this package comes from working on a NestJS API using [KafkaJS](https://docs.nestjs.com/microservices/kafka) where kafka consumer topics are defined as controllers. It's a very convenient pattern to work with.
 
-There is no doubt more work to do but it is a start.
+New project so definitely more work to be done, contributions welcome.
+
+
 ## Installation
 
 Install FastAPI Kafka with pip
@@ -175,13 +177,6 @@ app = FastAPIKafka(
     shutdown_functions=[my_shutdown_actions]
 )
 ```
-## Contributing
-
-Contributions are always welcome!
-
-This is a new project and improvements are gladly welcomed.
-
-
 ## Acknowledgements
 
- - This package is a wrapper around the amazing [FastAPI](https://pypi.org/project/fastapi/) package.
+ Building upon the awesome [FastAPI](https://pypi.org/project/fastapi/) framework.
