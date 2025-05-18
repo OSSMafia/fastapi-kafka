@@ -4,7 +4,6 @@ from contextlib import asynccontextmanager
 from functools import wraps
 from inspect import signature
 import json
-from typing import Any
 from typing import Callable
 from typing import Optional
 from typing import Union
@@ -68,14 +67,12 @@ class FastAPIKafka(FastAPI):
                     except (json.JSONDecodeError, ValidationError) as e:
                         raise ValueError(f"Kafka message validation error: {e}") from e
                 else:
-                    if self._is_json(message_value):
-                        try:
-                            message_data = json.loads(message_value)
-                            return await func(message_data, *args, **kwargs)
-                        except json.JSONDecodeError as e:
-                            raise ValueError(f"Failed to decode Kafka message: {e}") from e
-                    else:
+                    try:
+                        message_data = json.loads(message_value)
+                    except json.JSONDecodeError:
                         return await func(message_value, *args, **kwargs)
+                    else:
+                        return await func(message_data, *args, **kwargs)
 
             self.kafka_routes[topic_name] = wrapper
             return wrapper
@@ -109,10 +106,3 @@ class FastAPIKafka(FastAPI):
             await self.kafka_task
         except asyncio.CancelledError:
             pass
-
-    def _is_json(self, input: Any) -> bool:
-        try:
-            json.loads(input)
-            return True
-        except json.JSONDecodeError:
-            return False
